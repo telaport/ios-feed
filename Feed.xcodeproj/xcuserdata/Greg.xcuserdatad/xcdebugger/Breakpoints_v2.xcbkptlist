@@ -10,11 +10,88 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Feed/ViewController.swift"
-            timestampString = "499499774.634382"
+            timestampString = "499590183.598815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10">
+            startingLineNumber = "2"
+            endingLineNumber = "2">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Feed.ViewController.__deallocating_deinit"
+                  moduleName = "Feed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Greg/code/xcode/Telaport/Feed/Feed/ViewController.swift"
+                  timestampString = "499584587.491001"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Feed.ViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Feed.ViewController"
+                  moduleName = "Feed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Greg/code/xcode/Telaport/Feed/Feed/ViewController.swift"
+                  timestampString = "499584587.496347"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Feed.ViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Feed.ViewController"
+                  moduleName = "Feed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Greg/code/xcode/Telaport/Feed/Feed/ViewController.swift"
+                  timestampString = "499584587.49952"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Feed.ViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Feed.ViewController&gt;"
+                  moduleName = "Feed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Greg/code/xcode/Telaport/Feed/Feed/ViewController.swift"
+                  timestampString = "499584587.502375"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Feed.ViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Feed.ViewController&gt;"
+                  moduleName = "Feed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Greg/code/xcode/Telaport/Feed/Feed/ViewController.swift"
+                  timestampString = "499584587.504843"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
