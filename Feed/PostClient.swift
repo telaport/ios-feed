@@ -10,12 +10,12 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class PostRequest {
-    var currentOffset = 0
+class PostClient {
     let limit = 10
     
-    public func fetchPosts(handler: @escaping ([Post]) -> Void) {
-        let query: Parameters = ["offset": self.currentOffset, "limit": self.limit]
+    public func fetchPosts(filter: (String, String)?, offset: Int, handler: @escaping ([Post]) -> Void) {
+        // check if filter key is type city, otherwise plug current location into query parameters
+        let query: Parameters = ["offset": offset, "limit": self.limit]
         Alamofire.request("https://api.telaport.me/posts", parameters: query).responseJSON {
             response in
                 if let body = response.result.value {
@@ -29,7 +29,7 @@ class PostRequest {
                                 newPosts.append(newPost)
                             }
                         }
-                        self.currentOffset = self.currentOffset + bodyJson.array!.count
+//                        self.currentOffset = self.currentOffset + bodyJson.array!.count
                         handler(newPosts)
                     }
                 }

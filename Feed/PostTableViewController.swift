@@ -9,22 +9,35 @@
 import UIKit
 
 class PostTableViewController: UITableViewController {
+    var parentFeedViewController: FeedViewController? = nil
     var posts = [[Post]]()
+    var postClient: PostClient = PostClient()
+    var offset: Int {
+        get {
+            var count = 0
+            for section in posts {
+                for _ in section {
+                    count += 1
+                }
+            }
+            return count
+        }
+    }
+    var filter: (String, String)? {
+        didSet {
+            self.getPostsFromTheBeginning()
+        }
+    }
     
     @IBOutlet weak var spinner: UIRefreshControl!
     
     @IBAction func refresh(_ sender: UIRefreshControl) {
-        self.posts = [[Post]]()
-        self.startNewRequest()
-//        self.parentFeedViewController?.toggleButtons(show: false)
+        self.getPostsFromTheBeginning()
     }
 
-    var parentFeedViewController: FeedViewController? = nil
-    var currentPostRequest: PostRequest? = nil
-    
-    func startNewRequest() {
-        self.currentPostRequest = PostRequest()
-        self.currentPostRequest!.fetchPosts {
+    func getPostsFromTheBeginning() {
+        self.posts = [[Post]]()
+        self.postClient.fetchPosts(filter: self.filter, offset: self.offset, handler: {
             (newPosts: [Post]) -> Void in
             DispatchQueue.main.async { () -> Void in
                 if (newPosts.count > 0) {
@@ -32,27 +45,37 @@ class PostTableViewController: UITableViewController {
                     self.parentFeedViewController?.currentPost = self.posts[0][0]
                     self.tableView.reloadData()
                     self.spinner?.endRefreshing()
+                } else {
+                    // show no results message
                 }
             }
-        }
+        })
     }
     
     func getMorePosts() {
-        if self.currentPostRequest != nil {
-            self.currentPostRequest!.fetchPosts{
-                (newPosts: [Post]) -> Void in
-                DispatchQueue.main.async { () -> Void in
-                    if (newPosts.count > 0) {
-                        self.posts.append(newPosts)
-                    }
-                }
-            }
-        }
+        // show the bottom spinner
+//        self.fetchPosts()
+        // append to table view and hide the bottom spinner
     }
+    
+    
+    
+//    func getMorePosts() {
+//        if self.currentPostRequest != nil {
+//            self.currentPostRequest!.fetchPosts{
+//                (newPosts: [Post]) -> Void in
+//                DispatchQueue.main.async { () -> Void in
+//                    if (newPosts.count > 0) {
+//                        self.posts.append(newPosts)
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.startNewRequest()
+        self.getPostsFromTheBeginning()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

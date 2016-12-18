@@ -20,8 +20,10 @@ class FeedViewController: UIViewController {
             hashtagButton.isSelected = false
             hashtagButton.backgroundColor = UIColor.darkText
             sender.backgroundColor = UIColor.lightText
+            self.postTableViewController?.filter = ("city", cityButton.title(for: UIControlState.normal)!)
         } else {
             sender.backgroundColor = UIColor.darkText
+            self.postTableViewController?.filter = nil
         }
     }
     
@@ -31,18 +33,14 @@ class FeedViewController: UIViewController {
             cityButton.isSelected = false
             cityButton.backgroundColor = UIColor.darkText
             sender.backgroundColor = UIColor.lightText
+            self.postTableViewController?.filter = ("hashtag", hashtagButton.title(for: UIControlState.normal)!)
         } else {
             sender.backgroundColor = UIColor.darkText
+            self.postTableViewController?.filter = nil
         }
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        cityButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
-        hashtagButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
-        cityButton.setTitleColor(UIColor.darkText, for: UIControlState.selected)
-        hashtagButton.setTitleColor(UIColor.darkText, for: UIControlState.selected)
+        
+        
     }
     
     var currentPost: Post? = nil {
@@ -53,12 +51,23 @@ class FeedViewController: UIViewController {
         }
     }
     
+    var postTableViewController: PostTableViewController? = nil
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        cityButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+        hashtagButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+        cityButton.setTitleColor(UIColor.darkText, for: UIControlState.selected)
+        hashtagButton.setTitleColor(UIColor.darkText, for: UIControlState.selected)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
             case "ShowEmbeddedPostTableView":
                 if let ptmvc = segue.destination as? PostTableViewController {
                     ptmvc.parentFeedViewController = self
+                    self.postTableViewController = ptmvc
                 }
                 break
             default:
