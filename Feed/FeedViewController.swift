@@ -33,7 +33,9 @@ class FeedViewController: UIViewController {
             cityButton.isSelected = false
             cityButton.backgroundColor = UIColor.darkText
             sender.backgroundColor = UIColor.lightText
-            self.postTableViewController?.filter = ("hashtag", hashtagButton.title(for: UIControlState.normal)!)
+            var hashtag = hashtagButton.title(for: UIControlState.normal)!
+            hashtag.remove(at: hashtag.startIndex)
+            self.postTableViewController?.filter = ("hashtag", hashtag)
         } else {
             sender.backgroundColor = UIColor.darkText
             self.postTableViewController?.filter = nil

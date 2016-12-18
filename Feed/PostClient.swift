@@ -15,12 +15,16 @@ class PostClient {
     
     public func fetchPosts(filter: (String, String)?, offset: Int, handler: @escaping ([Post]) -> Void) {
         // check if filter key is type city, otherwise plug current location into query parameters
-        let query: Parameters = ["offset": offset, "limit": self.limit]
+        var query: Parameters = ["offset": offset, "limit": self.limit]
+        if let filter = filter {
+            let (key, value) = filter
+            query[key] = value
+        }
         Alamofire.request("https://api.telaport.me/posts", parameters: query).responseJSON {
             response in
                 if let body = response.result.value {
                     let bodyJson = JSON(body)
-                    if (bodyJson.array!.count != 0) {
+//                    if (bodyJson.array!.count != 0) {
                         var newPosts = [Post]()
                         for (_, newPostJson) in bodyJson {
                             print(newPostJson["hashtagOriginal"])
@@ -29,11 +33,10 @@ class PostClient {
                                 newPosts.append(newPost)
                             }
                         }
-//                        self.currentOffset = self.currentOffset + bodyJson.array!.count
+
                         handler(newPosts)
                     }
-                }
+//                }
             }
-        
     }
 }

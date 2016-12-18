@@ -10,17 +10,21 @@ import UIKit
 
 class PostTableViewController: UITableViewController {
     var parentFeedViewController: FeedViewController? = nil
-    var posts = [[Post]]()
+    var posts: [[Post]]? = nil
     var postClient: PostClient = PostClient()
     var offset: Int {
         get {
-            var count = 0
-            for section in posts {
-                for _ in section {
-                    count += 1
+            if let posts = self.posts {
+                var count = 0
+                for section in posts {
+                    for _ in section {
+                        count += 1
+                    }
                 }
+                return count
+            } else {
+                return 0
             }
-            return count
         }
     }
     var filter: (String, String)? {
@@ -36,13 +40,14 @@ class PostTableViewController: UITableViewController {
     }
 
     func getPostsFromTheBeginning() {
-        self.posts = [[Post]]()
+        self.posts = nil
         self.postClient.fetchPosts(filter: self.filter, offset: self.offset, handler: {
             (newPosts: [Post]) -> Void in
             DispatchQueue.main.async { () -> Void in
                 if (newPosts.count > 0) {
-                    self.posts.insert(newPosts, at:0)
-                    self.parentFeedViewController?.currentPost = self.posts[0][0]
+                    self.posts = [[Post]]()
+                    self.posts!.insert(newPosts, at:0)
+                    self.parentFeedViewController?.currentPost = self.posts![0][0]
                     self.tableView.reloadData()
                     self.spinner?.endRefreshing()
                 } else {
@@ -54,8 +59,8 @@ class PostTableViewController: UITableViewController {
     
     func getMorePosts() {
         // show the bottom spinner
-//        self.fetchPosts()
-        // append to table view and hide the bottom spinner
+        // then getMorePosts
+        // then append to table view and hide the bottom spinner in callback
     }
     
     
@@ -79,24 +84,33 @@ class PostTableViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return posts.count
+        if let count = self.posts?.count {
+            return count
+        }
+        
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts[section].count
+        if let section = posts?[section] {
+           return section.count
+        }
+        
+        return 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Post", for: indexPath) as! PostTableViewCell
 
-        let post = posts[indexPath.section][indexPath.row]
-        post.fetchImage {
-            (data: Data?) -> Void in
-            if let data = data {
-                cell.mediaImage?.image = UIImage(data: data)
-            } else {
-                cell.mediaImage?.image = nil
+        if let post = posts?[indexPath.section][indexPath.row] {
+            post.fetchImage {
+                (data: Data?) -> Void in
+                if let data = data {
+                    cell.mediaImage?.image = UIImage(data: data)
+                } else {
+                    cell.mediaImage?.image = nil
+                }
             }
         }
         
@@ -111,10 +125,10 @@ class PostTableViewController: UITableViewController {
         if let path = self.tableView.indexPathsForVisibleRows {
             if path.count == 1 {
                 let indexPath = path[0]
-                self.parentFeedViewController?.currentPost = self.posts[indexPath.section][indexPath.row]
+                if let currentPost = self.posts?[indexPath.section][indexPath.row] {
+                    self.parentFeedViewController?.currentPost = currentPost
+                }
             }
         }
     }
-    
-    
 }
