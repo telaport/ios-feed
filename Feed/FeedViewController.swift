@@ -40,9 +40,6 @@ class FeedViewController: UIViewController {
             sender.backgroundColor = UIColor.darkText
             self.postTableViewController?.filter = nil
         }
-        
-        
-        
     }
     
     var currentPost: Post? = nil {

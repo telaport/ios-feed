@@ -85,10 +85,18 @@ class PostTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         if let count = self.posts?.count {
+            tableView.backgroundView = nil
             return count
+        } else {
+            let noDataLabel: UILabel = UILabel()
+            noDataLabel.text = "No posts available. Telaport to a another portal or try again later."
+            noDataLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            noDataLabel.numberOfLines = 2
+            noDataLabel.textAlignment = .center
+            noDataLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+            tableView.backgroundView = noDataLabel
+            return 0
         }
-        
-        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
