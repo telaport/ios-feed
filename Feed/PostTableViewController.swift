@@ -50,8 +50,6 @@ class PostTableViewController: UITableViewController {
                     self.parentFeedViewController?.currentPost = self.posts![0][0]
                     self.tableView.reloadData()
                     self.spinner?.endRefreshing()
-                } else {
-                    // show no results message
                 }
             }
         })
@@ -59,7 +57,21 @@ class PostTableViewController: UITableViewController {
     
     func getMorePosts() {
         // show the bottom spinner
-        // then getMorePosts
+        self.postClient.fetchPosts(filter: self.filter, offset: self.offset, handler: {
+            (newPosts: [Post]) -> Void in
+            DispatchQueue.main.async { () -> Void in
+                if (newPosts.count > 0) {
+                    self.posts?.append(newPosts)
+                    self.tableView.beginUpdates()
+                    var sectionIndex = 0
+                    if let sectionsCount = self.posts?.count {
+                        sectionIndex = sectionsCount - 1
+                    }
+                    self.tableView.insertSections([sectionIndex], with: .bottom)
+                    self.tableView.endUpdates()
+                }
+            }
+        })
         // then append to table view and hide the bottom spinner in callback
     }
     
@@ -127,6 +139,15 @@ class PostTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(UIScreen.main.bounds.height - 20)
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay: UITableViewCell, forRowAt: IndexPath) {
+        if let posts = self.posts {
+            if (posts.count - 1) == forRowAt.section && (posts[forRowAt.section].count - 1) == forRowAt.row {
+                    // We've reached the bottom.
+                    self.getMorePosts()
+            }
+        }
     }
     
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

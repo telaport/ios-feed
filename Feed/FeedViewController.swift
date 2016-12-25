@@ -9,7 +9,16 @@
 import UIKit
 
 class FeedViewController: UIViewController {
-
+    var currentPost: Post? = nil {
+        didSet {
+            self.toggleButtons(show: true)
+            cityButton?.setTitle(currentPost!.city, for: UIControlState.normal)
+            hashtagButton?.setTitle("#" + currentPost!.hashtag, for: UIControlState.normal)
+        }
+    }
+    
+    var postTableViewController: PostTableViewController? = nil
+    
     @IBOutlet weak var cityButton: UIButton!
     
     @IBOutlet weak var hashtagButton: UIButton!
@@ -42,15 +51,7 @@ class FeedViewController: UIViewController {
         }
     }
     
-    var currentPost: Post? = nil {
-        didSet {
-            self.toggleButtons(show: true)
-            cityButton?.setTitle(currentPost!.city, for: UIControlState.normal)
-            hashtagButton?.setTitle("#" + currentPost!.hashtag, for: UIControlState.normal)
-        }
-    }
     
-    var postTableViewController: PostTableViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()

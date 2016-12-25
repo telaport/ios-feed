@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class PostClient {
-    let limit = 10
+    let limit = 5
     
     public func fetchPosts(filter: (String, String)?, offset: Int, handler: @escaping ([Post]) -> Void) {
         // check if filter key is type city, otherwise plug current location into query parameters
