@@ -19,6 +19,8 @@ class FeedViewController: UIViewController {
     
     var postTableViewController: PostTableViewController? = nil
     
+    @IBOutlet weak var noPostsView: UIView!
+    
     @IBOutlet weak var gettingMorePostsLabel: UILabel!
     
     @IBOutlet weak var cityButton: UIButton!

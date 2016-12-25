@@ -40,6 +40,7 @@ class PostTableViewController: UITableViewController {
     }
 
     func getPostsFromTheBeginning() {
+        self.parentFeedViewController?.noPostsView.isHidden = true
         self.posts = nil
         self.postClient.fetchPosts(filter: self.filter, offset: self.offset, handler: {
             (newPosts: [Post]) -> Void in
@@ -50,6 +51,8 @@ class PostTableViewController: UITableViewController {
                     self.parentFeedViewController?.currentPost = self.posts![0][0]
                     self.tableView.reloadData()
                     self.spinner?.endRefreshing()
+                } else {
+                    self.parentFeedViewController?.noPostsView.isHidden = false
                 }
             }
         })
@@ -60,6 +63,7 @@ class PostTableViewController: UITableViewController {
         self.postClient.fetchPosts(filter: self.filter, offset: self.offset, handler: {
             (newPosts: [Post]) -> Void in
             DispatchQueue.main.async { () -> Void in
+                
                 self.parentFeedViewController?.gettingMorePostsLabel.isHidden = true
                 if (newPosts.count > 0) {
                     self.posts?.append(newPosts)
@@ -73,23 +77,7 @@ class PostTableViewController: UITableViewController {
                 }
             }
         })
-        // then append to table view and hide the bottom spinner in callback
     }
-    
-    
-    
-//    func getMorePosts() {
-//        if self.currentPostRequest != nil {
-//            self.currentPostRequest!.fetchPosts{
-//                (newPosts: [Post]) -> Void in
-//                DispatchQueue.main.async { () -> Void in
-//                    if (newPosts.count > 0) {
-//                        self.posts.append(newPosts)
-//                    }
-//                }
-//            }
-//        }
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,16 +86,16 @@ class PostTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         if let count = self.posts?.count {
-            tableView.backgroundView = nil
+//            tableView.backgroundView = nil
             return count
         } else {
-            let noDataLabel: UILabel = UILabel()
-            noDataLabel.text = "No posts available. Telaport to a another portal or try again later."
-            noDataLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-            noDataLabel.numberOfLines = 2
-            noDataLabel.textAlignment = .center
-            noDataLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
-            tableView.backgroundView = noDataLabel
+//            let noDataLabel: UILabel = UILabel()
+//            noDataLabel.text = "No posts available. Telaport to a another portal or try again later."
+//            noDataLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+//            noDataLabel.numberOfLines = 2
+//            noDataLabel.textAlignment = .center
+//            noDataLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+//            tableView.backgroundView = noDataLabel
             return 0
         }
     }

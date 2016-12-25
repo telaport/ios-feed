@@ -25,6 +25,21 @@
                                     <segue destination="jsN-ek-lH6" kind="embed" identifier="ShowEmbeddedPostTableView" id="jeK-13-Fby"/>
                                 </connections>
                             </containerView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFt-DK-9EL">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts available. Telaport to a another portal or try again later." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="OxC-wg-60e">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="OxC-wg-60e" firstAttribute="centerY" secondItem="yFt-DK-9EL" secondAttribute="centerY" id="PMc-KU-IAM"/>
+                                    <constraint firstItem="OxC-wg-60e" firstAttribute="centerX" secondItem="yFt-DK-9EL" secondAttribute="centerX" id="akQ-db-I4x"/>
+                                    <constraint firstItem="OxC-wg-60e" firstAttribute="width" secondItem="yFt-DK-9EL" secondAttribute="width" id="xdk-2I-NFF"/>
+                                </constraints>
+                            </view>
                             <button hidden="YES" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gMa-HT-rja">
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal">
@@ -58,17 +73,22 @@
                             <constraint firstItem="1o9-mt-JiE" firstAttribute="top" secondItem="Nzr-9b-Za0" secondAttribute="bottom" id="LK2-D8-3uy"/>
                             <constraint firstItem="gMa-HT-rja" firstAttribute="top" secondItem="ruA-7x-Pa5" secondAttribute="bottom" constant="8" id="LXf-7F-tly"/>
                             <constraint firstItem="MXO-6C-yND" firstAttribute="centerX" secondItem="elF-Vl-G63" secondAttribute="centerX" id="U98-lf-Dyd"/>
+                            <constraint firstItem="MXO-6C-yND" firstAttribute="top" secondItem="yFt-DK-9EL" secondAttribute="bottom" id="XUA-sS-8DU"/>
                             <constraint firstItem="Nzr-9b-Za0" firstAttribute="leading" secondItem="elF-Vl-G63" secondAttribute="leading" id="ddI-xJ-OlP"/>
                             <constraint firstItem="1o9-mt-JiE" firstAttribute="top" secondItem="MXO-6C-yND" secondAttribute="bottom" constant="8" id="dgN-ks-dqZ"/>
                             <constraint firstItem="gMa-HT-rja" firstAttribute="leading" secondItem="elF-Vl-G63" secondAttribute="leadingMargin" id="f8G-oX-tpN"/>
                             <constraint firstItem="3VX-eg-2zI" firstAttribute="leading" secondItem="gMa-HT-rja" secondAttribute="leading" id="fQl-5J-d4M"/>
                             <constraint firstItem="Nzr-9b-Za0" firstAttribute="top" secondItem="ruA-7x-Pa5" secondAttribute="bottom" id="got-ZW-e5n"/>
+                            <constraint firstItem="yFt-DK-9EL" firstAttribute="top" secondItem="ruA-7x-Pa5" secondAttribute="bottom" id="h2y-eD-Zqp"/>
+                            <constraint firstItem="yFt-DK-9EL" firstAttribute="leading" secondItem="elF-Vl-G63" secondAttribute="leadingMargin" id="q6h-xg-XGR"/>
+                            <constraint firstItem="yFt-DK-9EL" firstAttribute="trailing" secondItem="elF-Vl-G63" secondAttribute="trailingMargin" id="uVA-o3-xxw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cityButton" destination="gMa-HT-rja" id="pgi-Vd-Izj"/>
                         <outlet property="gettingMorePostsLabel" destination="MXO-6C-yND" id="LDL-QQ-nKh"/>
                         <outlet property="hashtagButton" destination="3VX-eg-2zI" id="k1H-1o-Dqs"/>
+                        <outlet property="noPostsView" destination="yFt-DK-9EL" id="yEB-zj-evI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1b8-I9-Scn" userLabel="First Responder" sceneMemberID="firstResponder"/>
