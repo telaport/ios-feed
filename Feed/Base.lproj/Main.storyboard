@@ -43,6 +43,11 @@
                                     <action selector="hashtagButtonTouched:" destination="Pnh-U4-OjE" eventType="touchUpInside" id="4eT-1y-HWn"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Getting more posts..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXO-6C-yND">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -52,7 +57,9 @@
                             <constraint firstAttribute="trailing" secondItem="Nzr-9b-Za0" secondAttribute="trailing" id="FIB-0h-21i"/>
                             <constraint firstItem="1o9-mt-JiE" firstAttribute="top" secondItem="Nzr-9b-Za0" secondAttribute="bottom" id="LK2-D8-3uy"/>
                             <constraint firstItem="gMa-HT-rja" firstAttribute="top" secondItem="ruA-7x-Pa5" secondAttribute="bottom" constant="8" id="LXf-7F-tly"/>
+                            <constraint firstItem="MXO-6C-yND" firstAttribute="centerX" secondItem="elF-Vl-G63" secondAttribute="centerX" id="U98-lf-Dyd"/>
                             <constraint firstItem="Nzr-9b-Za0" firstAttribute="leading" secondItem="elF-Vl-G63" secondAttribute="leading" id="ddI-xJ-OlP"/>
+                            <constraint firstItem="1o9-mt-JiE" firstAttribute="top" secondItem="MXO-6C-yND" secondAttribute="bottom" constant="8" id="dgN-ks-dqZ"/>
                             <constraint firstItem="gMa-HT-rja" firstAttribute="leading" secondItem="elF-Vl-G63" secondAttribute="leadingMargin" id="f8G-oX-tpN"/>
                             <constraint firstItem="3VX-eg-2zI" firstAttribute="leading" secondItem="gMa-HT-rja" secondAttribute="leading" id="fQl-5J-d4M"/>
                             <constraint firstItem="Nzr-9b-Za0" firstAttribute="top" secondItem="ruA-7x-Pa5" secondAttribute="bottom" id="got-ZW-e5n"/>
@@ -60,6 +67,7 @@
                     </view>
                     <connections>
                         <outlet property="cityButton" destination="gMa-HT-rja" id="pgi-Vd-Izj"/>
+                        <outlet property="gettingMorePostsLabel" destination="MXO-6C-yND" id="LDL-QQ-nKh"/>
                         <outlet property="hashtagButton" destination="3VX-eg-2zI" id="k1H-1o-Dqs"/>
                     </connections>
                 </viewController>

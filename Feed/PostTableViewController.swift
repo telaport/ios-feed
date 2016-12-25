@@ -56,10 +56,11 @@ class PostTableViewController: UITableViewController {
     }
     
     func getMorePosts() {
-        // show the bottom spinner
+        self.parentFeedViewController?.gettingMorePostsLabel.isHidden = false
         self.postClient.fetchPosts(filter: self.filter, offset: self.offset, handler: {
             (newPosts: [Post]) -> Void in
             DispatchQueue.main.async { () -> Void in
+                self.parentFeedViewController?.gettingMorePostsLabel.isHidden = true
                 if (newPosts.count > 0) {
                     self.posts?.append(newPosts)
                     self.tableView.beginUpdates()
