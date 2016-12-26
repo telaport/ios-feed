@@ -12,7 +12,7 @@
 		3775BD1F1DED357E00B673B6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775BD1E1DED357E00B673B6 /* PostTableViewCell.swift */; };
 		3775BD211DED35AE00B673B6 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775BD201DED35AE00B673B6 /* PostTableViewController.swift */; };
 		3775BD231DED36EA00B673B6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775BD221DED36EA00B673B6 /* Post.swift */; };
-		3775BD251DED3FF300B673B6 /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775BD241DED3FF300B673B6 /* PostRequest.swift */; };
+		3775BD251DED3FF300B673B6 /* PostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775BD241DED3FF300B673B6 /* PostClient.swift */; };
 		37FBFC461DC4714500D21FE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FBFC451DC4714500D21FE8 /* AppDelegate.swift */; };
 		37FBFC4B1DC4714500D21FE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FBFC491DC4714500D21FE8 /* Main.storyboard */; };
 		37FBFC4E1DC4714500D21FE8 /* Feed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37FBFC4C1DC4714500D21FE8 /* Feed.xcdatamodeld */; };
@@ -25,7 +25,7 @@
 		3775BD1E1DED357E00B673B6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		3775BD201DED35AE00B673B6 /* PostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		3775BD221DED36EA00B673B6 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		3775BD241DED3FF300B673B6 /* PostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
+		3775BD241DED3FF300B673B6 /* PostClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostClient.swift; sourceTree = "<group>"; };
 		37FBFC421DC4714500D21FE8 /* Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FBFC451DC4714500D21FE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37FBFC4A1DC4714500D21FE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 				37FBFC451DC4714500D21FE8 /* AppDelegate.swift */,
 				37FBFC491DC4714500D21FE8 /* Main.storyboard */,
 				3775BD201DED35AE00B673B6 /* PostTableViewController.swift */,
-				3775BD241DED3FF300B673B6 /* PostRequest.swift */,
+				3775BD241DED3FF300B673B6 /* PostClient.swift */,
 				3775BD221DED36EA00B673B6 /* Post.swift */,
 				3775BD1E1DED357E00B673B6 /* PostTableViewCell.swift */,
 				37FBFC4F1DC4714500D21FE8 /* Assets.xcassets */,
@@ -130,7 +130,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Gregory Zarski";
 				TargetAttributes = {
 					37FBFC411DC4714500D21FE8 = {
@@ -224,7 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37FBFC4E1DC4714500D21FE8 /* Feed.xcdatamodeld in Sources */,
-				3775BD251DED3FF300B673B6 /* PostRequest.swift in Sources */,
+				3775BD251DED3FF300B673B6 /* PostClient.swift in Sources */,
 				3775BD211DED35AE00B673B6 /* PostTableViewController.swift in Sources */,
 				37FBFC461DC4714500D21FE8 /* AppDelegate.swift in Sources */,
 				3775BD1F1DED357E00B673B6 /* PostTableViewCell.swift in Sources */,
@@ -265,6 +265,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -314,6 +315,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -342,6 +344,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 03AC8BD9E74EE3450BF8FE71 /* Pods-Feed.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LY4LAM6WQA;
 				INFOPLIST_FILE = Feed/Info.plist;
@@ -356,6 +359,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9D9CC1364B48C805D788E733 /* Pods-Feed.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LY4LAM6WQA;
 				INFOPLIST_FILE = Feed/Info.plist;
