@@ -21,6 +21,8 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var noPostsView: UIView!
     
+    @IBOutlet weak var initialLoadingView: UIView!
+    
     @IBOutlet weak var gettingMorePostsLabel: UILabel!
     
     @IBOutlet weak var cityButton: UIButton!

@@ -96,6 +96,21 @@
                                     <constraint firstItem="OxC-wg-60e" firstAttribute="width" secondItem="yFt-DK-9EL" secondAttribute="width" id="xdk-2I-NFF"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9f-em-gbp">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading" translatesAutoresizingMaskIntoConstraints="NO" id="bnK-rA-aJ9"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="OgY-VT-mpy"/>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="OgY-VT-mpy" firstAttribute="centerY" secondItem="E9f-em-gbp" secondAttribute="centerY" id="86r-Ch-YBT"/>
+                                    <constraint firstAttribute="trailing" secondItem="bnK-rA-aJ9" secondAttribute="trailing" id="8Fc-vw-P0b"/>
+                                    <constraint firstItem="bnK-rA-aJ9" firstAttribute="top" secondItem="E9f-em-gbp" secondAttribute="top" id="EUP-hR-bAk"/>
+                                    <constraint firstAttribute="bottom" secondItem="bnK-rA-aJ9" secondAttribute="bottom" id="F70-ZE-Vzm"/>
+                                    <constraint firstItem="OgY-VT-mpy" firstAttribute="centerX" secondItem="E9f-em-gbp" secondAttribute="centerX" id="IZw-kx-Bn4"/>
+                                    <constraint firstItem="bnK-rA-aJ9" firstAttribute="leading" secondItem="E9f-em-gbp" secondAttribute="leading" id="Q9n-Ry-i8b"/>
+                                </constraints>
+                            </view>
                             <button hidden="YES" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gMa-HT-rja">
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal">
@@ -123,13 +138,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3VX-eg-2zI" firstAttribute="top" secondItem="gMa-HT-rja" secondAttribute="bottom" constant="8" id="4lD-Kj-uBr"/>
+                            <constraint firstItem="1o9-mt-JiE" firstAttribute="top" secondItem="E9f-em-gbp" secondAttribute="bottom" id="7vG-b7-yeP"/>
                             <constraint firstItem="gMa-HT-rja" firstAttribute="width" relation="lessThanOrEqual" secondItem="Nzr-9b-Za0" secondAttribute="width" multiplier="0.91" id="8qd-fW-idM"/>
                             <constraint firstItem="3VX-eg-2zI" firstAttribute="width" relation="lessThanOrEqual" secondItem="Nzr-9b-Za0" secondAttribute="width" multiplier="0.91" id="Dy1-jB-4Ro"/>
                             <constraint firstAttribute="trailing" secondItem="Nzr-9b-Za0" secondAttribute="trailing" id="FIB-0h-21i"/>
+                            <constraint firstItem="E9f-em-gbp" firstAttribute="height" secondItem="elF-Vl-G63" secondAttribute="height" id="Fsd-Sd-GPa"/>
+                            <constraint firstAttribute="trailing" secondItem="E9f-em-gbp" secondAttribute="trailing" id="KVk-5L-Cz9"/>
                             <constraint firstItem="1o9-mt-JiE" firstAttribute="top" secondItem="Nzr-9b-Za0" secondAttribute="bottom" id="LK2-D8-3uy"/>
                             <constraint firstItem="gMa-HT-rja" firstAttribute="top" secondItem="ruA-7x-Pa5" secondAttribute="bottom" constant="8" id="LXf-7F-tly"/>
                             <constraint firstItem="MXO-6C-yND" firstAttribute="centerX" secondItem="elF-Vl-G63" secondAttribute="centerX" id="U98-lf-Dyd"/>
                             <constraint firstItem="MXO-6C-yND" firstAttribute="top" secondItem="yFt-DK-9EL" secondAttribute="bottom" id="XUA-sS-8DU"/>
+                            <constraint firstItem="E9f-em-gbp" firstAttribute="leading" secondItem="elF-Vl-G63" secondAttribute="leading" id="Z0C-ZV-nC3"/>
                             <constraint firstItem="Nzr-9b-Za0" firstAttribute="leading" secondItem="elF-Vl-G63" secondAttribute="leading" id="ddI-xJ-OlP"/>
                             <constraint firstItem="1o9-mt-JiE" firstAttribute="top" secondItem="MXO-6C-yND" secondAttribute="bottom" constant="8" id="dgN-ks-dqZ"/>
                             <constraint firstItem="gMa-HT-rja" firstAttribute="leading" secondItem="elF-Vl-G63" secondAttribute="leadingMargin" id="f8G-oX-tpN"/>
@@ -144,12 +163,13 @@
                         <outlet property="cityButton" destination="gMa-HT-rja" id="pgi-Vd-Izj"/>
                         <outlet property="gettingMorePostsLabel" destination="MXO-6C-yND" id="LDL-QQ-nKh"/>
                         <outlet property="hashtagButton" destination="3VX-eg-2zI" id="k1H-1o-Dqs"/>
+                        <outlet property="initialLoadingView" destination="E9f-em-gbp" id="5TU-ei-7M2"/>
                         <outlet property="noPostsView" destination="yFt-DK-9EL" id="yEB-zj-evI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1b8-I9-Scn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-292" y="-250"/>
+            <point key="canvasLocation" x="-292" y="-250.52473763118442"/>
         </scene>
         <!--Post Table View Controller-->
         <scene sceneID="8je-9s-SB6">
@@ -205,4 +225,7 @@
             <point key="canvasLocation" x="654" y="-251"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Loading" width="750" height="1334"/>
+    </resources>
 </document>

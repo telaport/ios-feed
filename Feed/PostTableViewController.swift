@@ -45,6 +45,7 @@ class PostTableViewController: UITableViewController {
         self.postClient.fetchPosts(filter: self.filter, offset: self.offset, handler: {
             (newPosts: [Post]) -> Void in
             DispatchQueue.main.async { () -> Void in
+                self.parentFeedViewController?.initialLoadingView.isHidden = true
                 if (newPosts.count > 0) {
                     self.posts = [[Post]]()
                     self.posts!.insert(newPosts, at:0)
