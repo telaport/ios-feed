@@ -30,7 +30,7 @@ class Post {
     
     func fetchImage(handler: @escaping (Data?) -> Void) {
         if let mediaData = self.mediaData {
-            handler(self.mediaData)
+            handler(mediaData)
         } else {
             DispatchQueue.global(qos: .userInteractive).async { () -> Void in
                 if let mediaUrl = URL(string: self.mediaUrl) {
