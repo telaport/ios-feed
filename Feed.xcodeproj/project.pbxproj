@@ -17,6 +17,7 @@
 		37FBFC4B1DC4714500D21FE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FBFC491DC4714500D21FE8 /* Main.storyboard */; };
 		37FBFC4E1DC4714500D21FE8 /* Feed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37FBFC4C1DC4714500D21FE8 /* Feed.xcdatamodeld */; };
 		37FBFC501DC4714500D21FE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37FBFC4F1DC4714500D21FE8 /* Assets.xcassets */; };
+		60E7863A1E1122A300DEF8E5 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E786391E1122A300DEF8E5 /* MainPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		37FBFC4D1DC4714500D21FE8 /* Feed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Feed.xcdatamodel; sourceTree = "<group>"; };
 		37FBFC4F1DC4714500D21FE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37FBFC541DC4714500D21FE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60E786391E1122A300DEF8E5 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		6B69339AB342C215CFB7CD42 /* Pods_Feed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Feed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9CC1364B48C805D788E733 /* Pods-Feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feed.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feed/Pods-Feed.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 		37FBFC441DC4714500D21FE8 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				60E786391E1122A300DEF8E5 /* MainPageViewController.swift */,
 				371176A91DF9422D00E18725 /* FeedViewController.swift */,
 				37FBFC451DC4714500D21FE8 /* AppDelegate.swift */,
 				37FBFC491DC4714500D21FE8 /* Main.storyboard */,
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60E7863A1E1122A300DEF8E5 /* MainPageViewController.swift in Sources */,
 				37FBFC4E1DC4714500D21FE8 /* Feed.xcdatamodeld in Sources */,
 				3775BD251DED3FF300B673B6 /* PostClient.swift in Sources */,
 				3775BD211DED35AE00B673B6 /* PostTableViewController.swift in Sources */,
