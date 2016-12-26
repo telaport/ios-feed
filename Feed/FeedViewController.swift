@@ -59,10 +59,10 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cityButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
-        hashtagButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
-        cityButton.setTitleColor(UIColor.darkText, for: UIControlState.selected)
-        hashtagButton.setTitleColor(UIColor.darkText, for: UIControlState.selected)
+        cityButton?.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+        hashtagButton?.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+        cityButton?.setTitleColor(UIColor.darkText, for: UIControlState.selected)
+        hashtagButton?.setTitleColor(UIColor.darkText, for: UIControlState.selected)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
