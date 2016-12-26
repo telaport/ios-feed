@@ -30,20 +30,20 @@ class Post {
     
     func fetchImage(handler: @escaping (Data?) -> Void) {
         if let mediaData = self.mediaData {
-            // do nothing.
+            handler(self.mediaData)
         } else {
-        DispatchQueue.global(qos: .userInteractive).async { () -> Void in
-            if let mediaUrl = URL(string: self.mediaUrl) {
-                do {
-                    self.mediaData = try Data(contentsOf: mediaUrl)
-                    handler(self.mediaData)
-                } catch {
+            DispatchQueue.global(qos: .userInteractive).async { () -> Void in
+                if let mediaUrl = URL(string: self.mediaUrl) {
+                    do {
+                        self.mediaData = try Data(contentsOf: mediaUrl)
+                        handler(self.mediaData)
+                    } catch {
+                        handler(nil)
+                    }
+                } else {
                     handler(nil)
                 }
-            } else {
-                handler(nil)
             }
-        }
         }
     }
 }
