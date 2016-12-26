@@ -18,24 +18,32 @@ class Post {
     public let mediaUrl: String
     public let hashtag: String
     public let city: String
+    public var mediaData: Data?
     
     init(mediaType: MediaType, mediaUrl: String, hashtag: String, city: String) {
         self.mediaType = mediaType
         self.mediaUrl = mediaUrl
         self.hashtag = hashtag
         self.city = city
+        self.mediaData = nil
     }
     
-    func fetchImage(handler: (Data?) -> Void) {
-        if let mediaUrl = URL(string: self.mediaUrl) {
-            do {
-                let mediaData = try Data(contentsOf: mediaUrl)
-                handler(mediaData)
-            } catch {
+    func fetchImage(handler: @escaping (Data?) -> Void) {
+        if let mediaData = self.mediaData {
+            // do nothing.
+        } else {
+        DispatchQueue.global(qos: .userInteractive).async { () -> Void in
+            if let mediaUrl = URL(string: self.mediaUrl) {
+                do {
+                    self.mediaData = try Data(contentsOf: mediaUrl)
+                    handler(self.mediaData)
+                } catch {
+                    handler(nil)
+                }
+            } else {
                 handler(nil)
             }
-        } else {
-            handler(nil)
+        }
         }
     }
 }

@@ -116,10 +116,12 @@ class PostTableViewController: UITableViewController {
         if let post = posts?[indexPath.section][indexPath.row] {
             post.fetchImage {
                 (data: Data?) -> Void in
-                if let data = data {
-                    cell.mediaImage?.image = UIImage(data: data)
-                } else {
-                    cell.mediaImage?.image = nil
+                DispatchQueue.main.async { () -> Void in
+                    if let data = data {
+                        cell.mediaImage?.image = UIImage(data: data)
+                    } else {
+                        cell.mediaImage?.image = nil
+                    }
                 }
             }
         }
