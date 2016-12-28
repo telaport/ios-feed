@@ -30,8 +30,10 @@ class Post {
     
     func fetchImage(handler: @escaping (Data?) -> Void) {
         if let mediaData = self.mediaData {
+            // we already have the mediaData, let's just call the handler.
             handler(mediaData)
         } else {
+            // we don't have the mediaData and need to fetch it.
             DispatchQueue.global(qos: .userInteractive).async { () -> Void in
                 if let mediaUrl = URL(string: self.mediaUrl) {
                     do {

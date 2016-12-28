@@ -87,19 +87,24 @@ class PostTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         if let count = self.posts?.count {
-//            tableView.backgroundView = nil
             return count
         } else {
-//            let noDataLabel: UILabel = UILabel()
-//            noDataLabel.text = "No posts available. Telaport to a another portal or try again later."
-//            noDataLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-//            noDataLabel.numberOfLines = 2
-//            noDataLabel.textAlignment = .center
-//            noDataLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
-//            tableView.backgroundView = noDataLabel
             return 0
         }
     }
+    
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if let path = self.tableView.indexPathsForVisibleRows {
+            if path.count == 1 {
+                let indexPath = path[0]
+                if let currentPost = self.posts?[indexPath.section][indexPath.row] {
+                    self.parentFeedViewController?.currentPost = currentPost
+                }
+            }
+        }
+    }
+    
+    // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let section = posts?[section] {
@@ -138,17 +143,6 @@ class PostTableViewController: UITableViewController {
             if (posts.count - 1) == forRowAt.section && (posts[forRowAt.section].count - 1) == forRowAt.row {
                     // We've reached the bottom.
                     self.getMorePosts()
-            }
-        }
-    }
-    
-    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if let path = self.tableView.indexPathsForVisibleRows {
-            if path.count == 1 {
-                let indexPath = path[0]
-                if let currentPost = self.posts?[indexPath.section][indexPath.row] {
-                    self.parentFeedViewController?.currentPost = currentPost
-                }
             }
         }
     }

@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		31DD431C3A783B602F603A99 /* Pods_Feed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B69339AB342C215CFB7CD42 /* Pods_Feed.framework */; };
 		371176AA1DF9422D00E18725 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371176A91DF9422D00E18725 /* FeedViewController.swift */; };
+		3723D3401E11E8B6005B305A /* Portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3723D33F1E11E8B6005B305A /* Portal.swift */; };
 		3775BD1F1DED357E00B673B6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775BD1E1DED357E00B673B6 /* PostTableViewCell.swift */; };
 		3775BD211DED35AE00B673B6 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775BD201DED35AE00B673B6 /* PostTableViewController.swift */; };
 		3775BD231DED36EA00B673B6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775BD221DED36EA00B673B6 /* Post.swift */; };
 		3775BD251DED3FF300B673B6 /* PostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775BD241DED3FF300B673B6 /* PostClient.swift */; };
+		37A721DC1E12CB000067C121 /* PortalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A721DB1E12CB000067C121 /* PortalTableViewCell.swift */; };
 		37B0731E1E112F30007CFE07 /* PortalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B0731D1E112F30007CFE07 /* PortalTableViewController.swift */; };
 		37B073201E112F52007CFE07 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B0731F1E112F52007CFE07 /* Launch.storyboard */; };
 		37FBFC461DC4714500D21FE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FBFC451DC4714500D21FE8 /* AppDelegate.swift */; };
@@ -25,10 +27,12 @@
 /* Begin PBXFileReference section */
 		03AC8BD9E74EE3450BF8FE71 /* Pods-Feed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feed/Pods-Feed.debug.xcconfig"; sourceTree = "<group>"; };
 		371176A91DF9422D00E18725 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		3723D33F1E11E8B6005B305A /* Portal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Portal.swift; sourceTree = "<group>"; };
 		3775BD1E1DED357E00B673B6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		3775BD201DED35AE00B673B6 /* PostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		3775BD221DED36EA00B673B6 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3775BD241DED3FF300B673B6 /* PostClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostClient.swift; sourceTree = "<group>"; };
+		37A721DB1E12CB000067C121 /* PortalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalTableViewCell.swift; sourceTree = "<group>"; };
 		37B0731D1E112F30007CFE07 /* PortalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalTableViewController.swift; sourceTree = "<group>"; };
 		37B0731F1E112F52007CFE07 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		37FBFC421DC4714500D21FE8 /* Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feed.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,10 +93,12 @@
 				37FBFC491DC4714500D21FE8 /* Main.storyboard */,
 				37B0731F1E112F52007CFE07 /* Launch.storyboard */,
 				37B0731D1E112F30007CFE07 /* PortalTableViewController.swift */,
+				3723D33F1E11E8B6005B305A /* Portal.swift */,
 				3775BD201DED35AE00B673B6 /* PostTableViewController.swift */,
 				3775BD241DED3FF300B673B6 /* PostClient.swift */,
 				3775BD221DED36EA00B673B6 /* Post.swift */,
 				3775BD1E1DED357E00B673B6 /* PostTableViewCell.swift */,
+				37A721DB1E12CB000067C121 /* PortalTableViewCell.swift */,
 				37FBFC4F1DC4714500D21FE8 /* Assets.xcassets */,
 				37FBFC541DC4714500D21FE8 /* Info.plist */,
 				37FBFC4C1DC4714500D21FE8 /* Feed.xcdatamodeld */,
@@ -234,11 +240,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				60E7863A1E1122A300DEF8E5 /* MainPageViewController.swift in Sources */,
+				3723D3401E11E8B6005B305A /* Portal.swift in Sources */,
 				37FBFC4E1DC4714500D21FE8 /* Feed.xcdatamodeld in Sources */,
 				3775BD251DED3FF300B673B6 /* PostClient.swift in Sources */,
 				3775BD211DED35AE00B673B6 /* PostTableViewController.swift in Sources */,
 				37FBFC461DC4714500D21FE8 /* AppDelegate.swift in Sources */,
 				3775BD1F1DED357E00B673B6 /* PostTableViewCell.swift in Sources */,
+				37A721DC1E12CB000067C121 /* PortalTableViewCell.swift in Sources */,
 				37B0731E1E112F30007CFE07 /* PortalTableViewController.swift in Sources */,
 				3775BD231DED36EA00B673B6 /* Post.swift in Sources */,
 				371176AA1DF9422D00E18725 /* FeedViewController.swift in Sources */,

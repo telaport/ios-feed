@@ -24,7 +24,7 @@
         <scene sceneID="Cyf-iX-ytW">
             <objects>
                 <tableViewController storyboardIdentifier="PortalTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gn5-dv-7SF" customClass="PortalTableViewController" customModule="Feed" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="H6S-ny-La8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="H6S-ny-La8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,13 +45,40 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TMw-8w-fdN">
-                                <rect key="frame" x="0.0" y="124" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Portal" rowHeight="80" id="TMw-8w-fdN" customClass="PortalTableViewCell" customModule="Feed" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="124" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TMw-8w-fdN" id="g2K-1v-7hS">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r6S-h7-4yb">
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="71" id="IFt-yW-HCX"/>
+                                                <constraint firstAttribute="width" constant="71" id="oWl-Lx-Jyg"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#sample" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTx-Ew-dhY">
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="r6S-h7-4yb" firstAttribute="top" secondItem="g2K-1v-7hS" secondAttribute="topMargin" constant="-4" id="3Op-1v-Jjt"/>
+                                        <constraint firstItem="mTx-Ew-dhY" firstAttribute="top" secondItem="r6S-h7-4yb" secondAttribute="top" id="8hw-Lm-Ck3"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mTx-Ew-dhY" secondAttribute="trailing" id="EXX-7n-LGl"/>
+                                        <constraint firstItem="mTx-Ew-dhY" firstAttribute="bottom" secondItem="r6S-h7-4yb" secondAttribute="bottom" id="IbM-fh-sN9"/>
+                                        <constraint firstItem="mTx-Ew-dhY" firstAttribute="leading" secondItem="r6S-h7-4yb" secondAttribute="trailing" constant="8" id="VNu-do-hkw"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="r6S-h7-4yb" secondAttribute="bottom" constant="-4" id="ZSQ-t4-jJJ"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="r6S-h7-4yb" secondAttribute="leading" id="s4J-WG-oc0"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="portalImage" destination="r6S-h7-4yb" id="7ym-d2-2Hw"/>
+                                    <outlet property="portalText" destination="mTx-Ew-dhY" id="hL2-ew-2Vj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -62,7 +89,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8v-Ql-whx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1182" y="-250"/>
+            <point key="canvasLocation" x="-1183.2" y="-250.52473763118442"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="pz4-vO-daB">
