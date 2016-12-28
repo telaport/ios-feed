@@ -110,16 +110,21 @@
                             </containerView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFt-DK-9EL">
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyBackground" translatesAutoresizingMaskIntoConstraints="NO" id="SpE-eL-H77"/>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts available. Telaport to a another portal or try again later." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="OxC-wg-60e">
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SpE-eL-H77" secondAttribute="trailing" id="O8f-cF-se5"/>
                                     <constraint firstItem="OxC-wg-60e" firstAttribute="centerY" secondItem="yFt-DK-9EL" secondAttribute="centerY" id="PMc-KU-IAM"/>
+                                    <constraint firstItem="SpE-eL-H77" firstAttribute="top" secondItem="yFt-DK-9EL" secondAttribute="top" id="YcE-RJ-7oi"/>
                                     <constraint firstItem="OxC-wg-60e" firstAttribute="centerX" secondItem="yFt-DK-9EL" secondAttribute="centerX" id="akQ-db-I4x"/>
+                                    <constraint firstItem="SpE-eL-H77" firstAttribute="leading" secondItem="yFt-DK-9EL" secondAttribute="leading" id="f65-DB-typ"/>
+                                    <constraint firstAttribute="bottom" secondItem="SpE-eL-H77" secondAttribute="bottom" id="nuH-Ve-4Hl"/>
                                     <constraint firstItem="OxC-wg-60e" firstAttribute="width" secondItem="yFt-DK-9EL" secondAttribute="width" id="xdk-2I-NFF"/>
                                 </constraints>
                             </view>
@@ -170,20 +175,20 @@
                             <constraint firstItem="3VX-eg-2zI" firstAttribute="width" relation="lessThanOrEqual" secondItem="Nzr-9b-Za0" secondAttribute="width" multiplier="0.91" id="Dy1-jB-4Ro"/>
                             <constraint firstAttribute="trailing" secondItem="Nzr-9b-Za0" secondAttribute="trailing" id="FIB-0h-21i"/>
                             <constraint firstItem="E9f-em-gbp" firstAttribute="height" secondItem="elF-Vl-G63" secondAttribute="height" id="Fsd-Sd-GPa"/>
+                            <constraint firstItem="yFt-DK-9EL" firstAttribute="height" secondItem="elF-Vl-G63" secondAttribute="height" id="JTr-wP-tja"/>
                             <constraint firstAttribute="trailing" secondItem="E9f-em-gbp" secondAttribute="trailing" id="KVk-5L-Cz9"/>
                             <constraint firstItem="1o9-mt-JiE" firstAttribute="top" secondItem="Nzr-9b-Za0" secondAttribute="bottom" id="LK2-D8-3uy"/>
                             <constraint firstItem="gMa-HT-rja" firstAttribute="top" secondItem="ruA-7x-Pa5" secondAttribute="bottom" constant="8" id="LXf-7F-tly"/>
                             <constraint firstItem="MXO-6C-yND" firstAttribute="centerX" secondItem="elF-Vl-G63" secondAttribute="centerX" id="U98-lf-Dyd"/>
-                            <constraint firstItem="MXO-6C-yND" firstAttribute="top" secondItem="yFt-DK-9EL" secondAttribute="bottom" id="XUA-sS-8DU"/>
                             <constraint firstItem="E9f-em-gbp" firstAttribute="leading" secondItem="elF-Vl-G63" secondAttribute="leading" id="Z0C-ZV-nC3"/>
                             <constraint firstItem="Nzr-9b-Za0" firstAttribute="leading" secondItem="elF-Vl-G63" secondAttribute="leading" id="ddI-xJ-OlP"/>
                             <constraint firstItem="1o9-mt-JiE" firstAttribute="top" secondItem="MXO-6C-yND" secondAttribute="bottom" constant="8" id="dgN-ks-dqZ"/>
                             <constraint firstItem="gMa-HT-rja" firstAttribute="leading" secondItem="elF-Vl-G63" secondAttribute="leadingMargin" id="f8G-oX-tpN"/>
                             <constraint firstItem="3VX-eg-2zI" firstAttribute="leading" secondItem="gMa-HT-rja" secondAttribute="leading" id="fQl-5J-d4M"/>
                             <constraint firstItem="Nzr-9b-Za0" firstAttribute="top" secondItem="ruA-7x-Pa5" secondAttribute="bottom" id="got-ZW-e5n"/>
-                            <constraint firstItem="yFt-DK-9EL" firstAttribute="top" secondItem="ruA-7x-Pa5" secondAttribute="bottom" id="h2y-eD-Zqp"/>
-                            <constraint firstItem="yFt-DK-9EL" firstAttribute="leading" secondItem="elF-Vl-G63" secondAttribute="leadingMargin" id="q6h-xg-XGR"/>
-                            <constraint firstItem="yFt-DK-9EL" firstAttribute="trailing" secondItem="elF-Vl-G63" secondAttribute="trailingMargin" id="uVA-o3-xxw"/>
+                            <constraint firstItem="yFt-DK-9EL" firstAttribute="leading" secondItem="elF-Vl-G63" secondAttribute="leading" id="q6h-xg-XGR"/>
+                            <constraint firstItem="1o9-mt-JiE" firstAttribute="top" secondItem="yFt-DK-9EL" secondAttribute="bottom" id="sw0-og-bO2"/>
+                            <constraint firstItem="yFt-DK-9EL" firstAttribute="trailing" secondItem="elF-Vl-G63" secondAttribute="trailing" id="uVA-o3-xxw"/>
                         </constraints>
                     </view>
                     <connections>
@@ -256,6 +261,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="EmptyBackground" width="750" height="1334"/>
         <image name="Loading" width="750" height="1334"/>
     </resources>
 </document>
