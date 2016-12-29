@@ -66,14 +66,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3709F3DA1E14942700F88BEB /* Portals */ = {
+		3709F3DA1E14942700F88BEB /* PortalPage */ = {
 			isa = PBXGroup;
 			children = (
 				37B0731D1E112F30007CFE07 /* PortalTableViewController.swift */,
 				37A721DB1E12CB000067C121 /* PortalTableViewCell.swift */,
 				3723D33F1E11E8B6005B305A /* Portal.swift */,
 			);
-			name = Portals;
+			name = PortalPage;
 			sourceTree = "<group>";
 		};
 		37FBFC391DC4714500D21FE8 = {
@@ -86,8 +86,8 @@
 				37FBFC541DC4714500D21FE8 /* Info.plist */,
 				37FBFC4C1DC4714500D21FE8 /* Feed.xcdatamodeld */,
 				37FBFC451DC4714500D21FE8 /* AppDelegate.swift */,
-				3709F3DA1E14942700F88BEB /* Portals */,
-				37FBFC441DC4714500D21FE8 /* Feed */,
+				3709F3DA1E14942700F88BEB /* PortalPage */,
+				37FBFC441DC4714500D21FE8 /* FeedPage */,
 				37FBFC431DC4714500D21FE8 /* Products */,
 				C55A77CD47A277BB0EF28906 /* Pods */,
 				0357BA457ED02AA608CB21BC /* Frameworks */,
@@ -102,7 +102,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		37FBFC441DC4714500D21FE8 /* Feed */ = {
+		37FBFC441DC4714500D21FE8 /* FeedPage */ = {
 			isa = PBXGroup;
 			children = (
 				371176A91DF9422D00E18725 /* FeedViewController.swift */,
@@ -111,6 +111,7 @@
 				3775BD221DED36EA00B673B6 /* Post.swift */,
 				3775BD1E1DED357E00B673B6 /* PostTableViewCell.swift */,
 			);
+			name = FeedPage;
 			path = Feed;
 			sourceTree = "<group>";
 		};
