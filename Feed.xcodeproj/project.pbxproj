@@ -27,21 +27,21 @@
 /* Begin PBXFileReference section */
 		03AC8BD9E74EE3450BF8FE71 /* Pods-Feed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feed/Pods-Feed.debug.xcconfig"; sourceTree = "<group>"; };
 		371176A91DF9422D00E18725 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		3723D33F1E11E8B6005B305A /* Portal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Portal.swift; sourceTree = "<group>"; };
+		3723D33F1E11E8B6005B305A /* Portal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Portal.swift; path = Feed/Portal.swift; sourceTree = "<group>"; };
 		3775BD1E1DED357E00B673B6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		3775BD201DED35AE00B673B6 /* PostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		3775BD221DED36EA00B673B6 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3775BD241DED3FF300B673B6 /* PostClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostClient.swift; sourceTree = "<group>"; };
-		37A721DB1E12CB000067C121 /* PortalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalTableViewCell.swift; sourceTree = "<group>"; };
-		37B0731D1E112F30007CFE07 /* PortalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalTableViewController.swift; sourceTree = "<group>"; };
-		37B0731F1E112F52007CFE07 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		37A721DB1E12CB000067C121 /* PortalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PortalTableViewCell.swift; path = Feed/PortalTableViewCell.swift; sourceTree = "<group>"; };
+		37B0731D1E112F30007CFE07 /* PortalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PortalTableViewController.swift; path = Feed/PortalTableViewController.swift; sourceTree = "<group>"; };
+		37B0731F1E112F52007CFE07 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Launch.storyboard; path = Feed/Launch.storyboard; sourceTree = "<group>"; };
 		37FBFC421DC4714500D21FE8 /* Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feed.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		37FBFC451DC4714500D21FE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		37FBFC451DC4714500D21FE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Feed/AppDelegate.swift; sourceTree = "<group>"; };
 		37FBFC4A1DC4714500D21FE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37FBFC4D1DC4714500D21FE8 /* Feed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Feed.xcdatamodel; sourceTree = "<group>"; };
-		37FBFC4F1DC4714500D21FE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		37FBFC541DC4714500D21FE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		60E786391E1122A300DEF8E5 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		37FBFC4F1DC4714500D21FE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Feed/Assets.xcassets; sourceTree = "<group>"; };
+		37FBFC541DC4714500D21FE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Feed/Info.plist; sourceTree = "<group>"; };
+		60E786391E1122A300DEF8E5 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainPageViewController.swift; path = Feed/MainPageViewController.swift; sourceTree = "<group>"; };
 		6B69339AB342C215CFB7CD42 /* Pods_Feed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Feed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9CC1364B48C805D788E733 /* Pods-Feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feed.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feed/Pods-Feed.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,9 +66,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3709F3DA1E14942700F88BEB /* Portals */ = {
+			isa = PBXGroup;
+			children = (
+				37B0731D1E112F30007CFE07 /* PortalTableViewController.swift */,
+				37A721DB1E12CB000067C121 /* PortalTableViewCell.swift */,
+				3723D33F1E11E8B6005B305A /* Portal.swift */,
+			);
+			name = Portals;
+			sourceTree = "<group>";
+		};
 		37FBFC391DC4714500D21FE8 = {
 			isa = PBXGroup;
 			children = (
+				37FBFC491DC4714500D21FE8 /* Main.storyboard */,
+				37B0731F1E112F52007CFE07 /* Launch.storyboard */,
+				60E786391E1122A300DEF8E5 /* MainPageViewController.swift */,
+				37FBFC4F1DC4714500D21FE8 /* Assets.xcassets */,
+				37FBFC541DC4714500D21FE8 /* Info.plist */,
+				37FBFC4C1DC4714500D21FE8 /* Feed.xcdatamodeld */,
+				37FBFC451DC4714500D21FE8 /* AppDelegate.swift */,
+				3709F3DA1E14942700F88BEB /* Portals */,
 				37FBFC441DC4714500D21FE8 /* Feed */,
 				37FBFC431DC4714500D21FE8 /* Products */,
 				C55A77CD47A277BB0EF28906 /* Pods */,
@@ -87,21 +105,11 @@
 		37FBFC441DC4714500D21FE8 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				60E786391E1122A300DEF8E5 /* MainPageViewController.swift */,
 				371176A91DF9422D00E18725 /* FeedViewController.swift */,
-				37FBFC451DC4714500D21FE8 /* AppDelegate.swift */,
-				37FBFC491DC4714500D21FE8 /* Main.storyboard */,
-				37B0731F1E112F52007CFE07 /* Launch.storyboard */,
-				37B0731D1E112F30007CFE07 /* PortalTableViewController.swift */,
-				3723D33F1E11E8B6005B305A /* Portal.swift */,
 				3775BD201DED35AE00B673B6 /* PostTableViewController.swift */,
 				3775BD241DED3FF300B673B6 /* PostClient.swift */,
 				3775BD221DED36EA00B673B6 /* Post.swift */,
 				3775BD1E1DED357E00B673B6 /* PostTableViewCell.swift */,
-				37A721DB1E12CB000067C121 /* PortalTableViewCell.swift */,
-				37FBFC4F1DC4714500D21FE8 /* Assets.xcassets */,
-				37FBFC541DC4714500D21FE8 /* Info.plist */,
-				37FBFC4C1DC4714500D21FE8 /* Feed.xcdatamodeld */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -262,6 +270,7 @@
 				37FBFC4A1DC4714500D21FE8 /* Base */,
 			);
 			name = Main.storyboard;
+			path = Feed;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -420,7 +429,8 @@
 				37FBFC4D1DC4714500D21FE8 /* Feed.xcdatamodel */,
 			);
 			currentVersion = 37FBFC4D1DC4714500D21FE8 /* Feed.xcdatamodel */;
-			path = Feed.xcdatamodeld;
+			name = Feed.xcdatamodeld;
+			path = Feed/Feed.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
