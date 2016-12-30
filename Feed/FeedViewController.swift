@@ -11,13 +11,19 @@ import UIKit
 class FeedViewController: UIViewController {
     var currentPost: Post? = nil {
         didSet {
-            self.toggleButtons(show: true)
-            cityButton?.setTitle(currentPost!.city, for: UIControlState.normal)
-            hashtagButton?.setTitle("#" + currentPost!.hashtag, for: UIControlState.normal)
+            if let currentPost = self.currentPost {
+                self.toggleButtons(show: true)
+                cityButton?.setTitle(currentPost.city, for: UIControlState.normal)
+                hashtagButton?.setTitle("#" + currentPost.hashtag, for: UIControlState.normal)
+            } else {
+                self.toggleButtons(show: false)
+            }
+            
+            
         }
     }
-    
     var postTableViewController: PostTableViewController? = nil
+    var portal: Portal?
     
     @IBOutlet weak var noPostsView: UIView!
     

@@ -54,6 +54,7 @@ class PostTableViewController: UITableViewController {
                     self.spinner?.endRefreshing()
                 } else {
                     self.parentFeedViewController?.noPostsView.isHidden = false
+                    self.parentFeedViewController?.currentPost = nil
                 }
             }
         })
